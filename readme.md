@@ -26,8 +26,6 @@ Here’s a screenshot showing the basic interface of the Captcha Check tool:
 
 ![Captcha Check Interface](image.png)
 
-*Replace the above image path with the correct one from your repository.*
-
 ## How to Use
 
 1. **Open the CAPTCHA Verification Page**: When users visit the CAPTCHA page, a new CAPTCHA is generated automatically.
