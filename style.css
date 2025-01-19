@@ -1,107 +1,136 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:200");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 body, html {
     height: 100%;
     margin: 0;
-    font-family: "Raleway", sans-serif;
-    font-weight: 200;
-}
-
-body {
-    background-color: #0f0f1a;
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f7fb;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 10px; /* Added padding for better spacing */
-    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
-    overflow: hidden; /* Prevents content from overflowing on smaller screens */
+    align-items: center;
 }
 
-.digit-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    justify-content: center; /* Center the OTP inputs */
-}
-
-.digit-group input {
-    width: 50px;
-    height: 60px;
-    background-color: #18182a;
-    border: 2px solid #2f2f3d;
-    line-height: 60px;
+.captcha-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px 20px;
+    width: 360px;
     text-align: center;
-    font-size: 30px;
-    font-family: "Raleway", sans-serif;
-    font-weight: 200;
-    color: white;
-    margin: 0 5px;
-    border-radius: 8px;
-    transition: border 0.3s ease-in-out;
 }
 
-.digit-group input:focus {
-    outline: none;
-    border-color: #66a1ff;
-    background-color: #232337;
+.captcha-container h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 15px;
 }
 
-.prompt {
-    margin-bottom: 20px;
+.captcha {
     font-size: 24px;
-    color: white;
+    font-weight: 600;
+    letter-spacing: 4px;
+    padding: 10px 15px;
+    color: #003366;
+    background-color: #e8f4ff;
+    border: 1px solid #cce3f7;
+    border-radius: 8px;
+    margin: 15px 0;
+    user-select: none;
+}
+
+.captcha-input {
+    width: 90%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #cce3f7;
+    border-radius: 6px;
+    outline: none;
+    background: #ffffff;
+    color: #003366;
+    margin: 10px 0;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.captcha-input:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.4);
+}
+
+.btn, #refresh-btn, #playCaptcha {
+    display: inline-block;
+    width: 48%;
+    padding: 12px 0;
+    font-size: 16px;
     font-weight: 500;
-    text-align: center;
-}
-
-.submit-btn {
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #66a1ff;
-    color: white;
+    color: #ffffff;
+    background: #0066cc;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    width: 100%;
-    max-width: 220px;
-    margin-top: 20px; /* Proper spacing below OTP inputs */
+    transition: background 0.3s ease, transform 0.2s ease;
     text-align: center;
-    display: block;
 }
 
-.submit-btn:hover {
-    background-color: #5575cc;
+#playCaptcha {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+#playCaptcha:hover, #verifyCaptcha:hover, #refresh-btn:hover {
+    background: #004b99;
+    transform: translateY(-2px);
+}
+
+#playCaptcha:active, #verifyCaptcha:active, #refresh-btn:active {
+    transform: scale(0.97);
+}
+
+#verifyCaptcha:focus, #refresh-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .message {
-    margin-top: 20px;
+    font-size: 15px;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-.status {
-    font-size: 18px;
-    color: white;
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Media Query for Mobile */
-@media (max-width: 480px) {
-    .digit-group {
-        gap: 5px;
-    }
-
-    .digit-group input {
-        width: 40px; /* Smaller width for mobile screens */
-        height: 50px; /* Adjust height for mobile screens */
-        font-size: 24px; /* Adjust font size for better fit */
-    }
-
-    .prompt {
-        font-size: 20px; /* Adjust font size for mobile */
-    }
-
-    .submit-btn {
-        padding: 10px 20px;
-        font-size: 16px;
-        max-width: 200px; /* Ensure the submit button fits on smaller screens */
-    }
+.success {
+    color: #4caf50;
 }
+
+.error {
+    color: #f44336;
+}
+
+.timer {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+#refresh-btn {
+    width: 48%;
+}
+
+#verifyCaptcha {
+    width: 48%;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
